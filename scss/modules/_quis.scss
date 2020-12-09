@@ -1,0 +1,205 @@
+.quis{
+    padding-top: 1px;
+    padding-bottom: 1px;
+
+    &__subtitle {
+        margin: 45px 0 15px;
+    }
+
+    &__title {
+        margin-bottom: 40px;
+    }
+
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__toggle {
+        display: none;
+        transition: all .3s;
+
+        ~ .quis__text {
+            display: none;
+        }
+        
+        &:checked  ~ .quis__text {
+            display: block;
+            }
+    }
+
+    &__toggle2 {
+        display: none;
+        transition: all .3s;
+
+        ~ .quis__text2 {
+            display: none;
+        }
+        
+        &:checked  ~ .quis__text2 {
+            display: block;
+        }
+    }
+
+    &__toggle3 {
+        display: none;
+
+        ~ .quis__text3 {
+            display: none;
+        }
+        
+        &:checked  ~ .quis__text3 {
+            display: block;
+        }
+    }
+
+    &__toggle, &__toggle2, &__toggle3 {
+
+        &:checked {
+            + .quis__label {
+               position: relative;
+               margin-bottom: 0;
+        
+                &::after {
+                    @include size(161px, 8px);
+                    @include pos($t: 14px, $l: 0);
+
+                    content: '';
+                    background: #C86DD7;
+                    display: inline-block;
+                    z-index: -1;   
+                }
+
+                .quis__arrow {
+                    transform: rotate(-135deg);
+                    -webkit-transform: rotate(-135deg);
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    &__label {
+        cursor: pointer;
+        margin-bottom: 25px;
+        transition: all .3s;
+
+        &:last-child {
+            margin-bottom: 60px;
+        }
+    }
+
+    &__arrow {
+        border: solid #131313;
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 3px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        margin: 0 0 3px 3px;
+        transition: all .3s;
+    }
+
+    &__text, &__text2, &__text3 {
+        padding: 8px 0 30px;
+        transition: all .3s;
+        opacity: .5;
+    }
+
+    &__video {
+        cursor: pointer;
+        position: relative;
+        margin-right: -15px;
+        display: flex;
+        justify-content: flex-end;
+        margin: 0 0em 65px auto;
+        @include size(100%);
+        max-width: 339px;
+        max-height: 272px;
+
+        &::before {
+            @include size(104.5%, 100%);
+            @include pos($t: 15px, $l: -15px);
+            
+            content: '';
+            background: linear-gradient(224.72deg, #3023AE -1%, #C86DD7 100.5%);
+            border-radius: 3px 0px 0px 3px;
+            z-index: -1;
+
+        }
+    }
+
+    &__img {
+        display: none;
+    }
+}
+
+@media (max-width: $mobile) {
+
+    .quis__img-mob {
+        display: block;
+        border-radius: 3px 0px 0px 3px;
+        height: 100%;
+        min-width: 100%;
+    }
+
+}
+
+@media (min-width: $mobile) {
+    .quis{
+    
+        &__subtitle {
+            margin: 140px 0 20px;
+        }
+    
+        &__title {
+            font-size: 56px;
+            line-height: 64px;
+            margin-bottom: 55px;
+        }
+
+        &__block {
+            flex-wrap: nowrap;
+        }
+    
+        &__video {
+            @include size(100%);
+            cursor: pointer;
+            position: absolute;
+            max-width: 670px;
+            max-height: 540px;
+            right: 0;
+
+            margin-top: 95px;
+            margin-bottom: 130px;
+
+            &::before {
+                @include size(105%, 100%);
+                @include pos($t: 33px, $l: -33px, $r: 0);
+                
+                content: '';
+                background: linear-gradient(224.72deg, #3023AE -1%, #C86DD7 100.5%);
+                border-radius: 3px;
+                z-index: -1;
+                border-radius: 3px 0px 0px 3px;
+            }
+        }
+
+        &__img {
+            display: block;
+            border-radius: 3px 0px 0px 3px;
+            height: 100%;
+            min-width: 100%;
+        }
+
+        &__img-mob {
+            display: none;
+        }
+
+        &__wrap {
+            margin-bottom: 185px;
+        }
+    }
+}
+
+

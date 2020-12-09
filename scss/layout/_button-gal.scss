@@ -1,0 +1,35 @@
+.button {
+  @include size(170px, 50px);
+
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    border-radius: 24px;
+    text-align: center;
+    font-weight: 700;
+    padding: 12px 50px;
+    white-space:nowrap;
+    background-color: #c86dd7;
+    transition: all .3s;
+
+  &--yellow {
+    background-color: #FFC300;
+}
+
+
+
+  @media (min-width: 768px) {
+    &:hover {
+      background-color: $orange;
+      transform: scale(1.1);
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #fff;
+  }
+}
+.button__blog {
+  margin-bottom: 50px;
+}

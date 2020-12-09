@@ -1,0 +1,35 @@
+.title {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    font-family: $font-title;
+    
+    &--white {
+        color: #fff;
+    }
+
+}
+
+.subtitle {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: $font-title;
+
+    &--white {
+        color: #fff;
+    }
+}
+
+.text {
+    font-family: $font;
+    &--white {
+        color: #fff;
+    }
+}
+
+@media (min-width: $mobile) {
+    .title {
+        font-size: 56px;
+        line-height: 64px;
+    }
+}
